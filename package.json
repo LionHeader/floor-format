@@ -1,0 +1,15 @@
+{
+  "name": "floor-format",
+  "version": "1.0.2",
+  "description": "Format the floating-point number to the specified number of digits, and truncate the extra 0 at the end of the floating-point number.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "decimal",
+    "floor"
+  ],
+  "author": "xianchao.he",
+  "license": "ISC"
+}
