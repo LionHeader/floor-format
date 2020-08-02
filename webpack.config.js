@@ -8,8 +8,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: './floor-format.min.js',
-    library: 'floor-format', // script标签引入
-    libraryTarget: 'umd', // 模块引入(umd)、全局引入(this/window/global)
+    libraryExport: 'default',
+    library: 'floorFormat', // script标签引入
+    libraryTarget: 'umd', // 模块引入(umd)、全局引入(this/window/global),
     umdNamedDefine: true
   },
   externals: [], // 额外的第三方库
