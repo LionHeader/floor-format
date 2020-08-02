@@ -1,15 +1,38 @@
 {
   "name": "floor-format",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Format the floating-point number to the specified number of digits, and truncate the extra 0 at the end of the floating-point number.",
-  "main": "index.js",
+  "main": "./dist/floor-format.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config ./webpack.config.js --progress --inline --colors"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   },
   "keywords": [
     "decimal",
     "floor"
   ],
   "author": "xianchao.he",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "respository": {
+    "type": "git",
+    "url": "https://github.com/LionHeader/floor-format"
+  }
 }
