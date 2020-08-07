@@ -32,7 +32,10 @@ const formatFloor = (value, digit = 2, format = 'ceil', options = {}) => {
   }
   const formatterValue = typeof value === 'string' ? value : value.toString()
   const resultValue = formatMethod[format === 'normal' ? 'floor' : format](formatterValue)
-  return Number(floorTrim(resultValue, options.unit, options.seperator))
+  if (typeof options === 'object' && options.unit) {
+    return floorTrim(resultValue, options.unit, options.seperator || '')
+  }
+  return floorTrim(resultValue)
 }
 
 export default {

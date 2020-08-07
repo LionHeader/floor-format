@@ -10,20 +10,34 @@
 <body>
   <h1>测试floor-format插件</h1>
   <div>
-    <h2>1. 通过script标签直接引入</h2>
-    <div id="test1"></div>
-    <div id="test2"></div>
+    <h2>通过script标签直接引入</h2>
+    <div>
+      <label for="number">number:</label>
+      <input type="text" id="number" oninput="onInput(this)" placeholder="请输入数字">
+    </div>
+    <div id="textValue"></div>
   </div>
   <script>
     const { formatFloor } = floorFormat
-    const ele = document.getElementById('test1')
-    ele.innerHTML = '1.02转化为一位小数的结果：' + formatFloor(1.02, 1) + '\n' +
-      '1.02转化为两位小数的结果：' + formatFloor(1.02, 2) + '\n' +
-      '1.02转化为三位小数的结果：' + formatFloor(1.02, 3) + '\n'
-    const ele2 = document.getElementById('test2')
-    ele2.innerHTML = '0.1507转化为一位小数的结果：' + formatFloor(0.1507, 1) + '\n' +
-      '0.1507转化为两位小数的结果：' + formatFloor(0.1507, 2) + '\n' +
-      '0.1507转化为三位小数的结果：' + formatFloor(0.1507, 3) + '\n'
+    const wrap = document.getElementById('textValue')
+    function onInput (ele) {
+      const value = ele.value
+      if (/^\d+(\.)?\d*$/.test(value)) {
+        wrap.innerHTML = `<h3>输入数值：${value}</h3>
+          <div>
+            <p>转化后数值：</p>
+            <ul>
+              <li>默认（向上取整）输出：${formatFloor(value)}</li>
+              <li>默认（向下取值）输出：${formatFloor(value, 2, 'floor')}</li>
+              <li>默认（四舍五入）输出：${formatFloor(value, 2, 'round')}</li>
+              <li>默认（保留整数）输出：${formatFloor(value, 0)}</li>
+              <li>默认（保留一位）输出：${formatFloor(value, 1)}</li>
+              <li>默认（带单位值）输出：${formatFloor(value, 2, 'ceil', { unit: 'MB', seperator: '-' })}</li>
+            </ul>
+          </div>
+        `
+      }
+    }
   </script>
 </body>
 </html>
