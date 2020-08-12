@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-lastest
     steps:
     - name: Checkout codes from origin/develop branch
-      uses: actions/checkout@develop
+      uses: actions/checkout@master
 
     - name: Build and Deploy to github Pages
-      uses: JamesIves/github-pages-deploy-action@develop
+      uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{secrets.ACCESS_ADMIN_TOKEN}}
         BRANCH: gh-pages
