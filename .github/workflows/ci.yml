@@ -3,7 +3,7 @@ name: Floor-format CI
 # 发布到 GitHub Pages
 
 on: 
-  push
+  push:
     branches:
       - develop
 
