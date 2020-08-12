@@ -1,0 +1,24 @@
+name: Floor-format CI
+
+# 发布到 GitHub Pages
+
+on: 
+  push
+    branches:
+      - develop
+
+jobs:
+  deploy-to-github:
+    name: deploy-to-github
+    runs-on: ubuntu-lastest
+    steps:
+    - name: Checkout codes from origin/develop branch
+      uses: actions/checkout@develop
+
+    - name: Build and Deploy to github Pages
+      uses: JamesIves/github-pages-deploy-action@develop
+      env:
+        ACCESS_TOKEN: ${{secrets.ACCESS_ADMIN_TOKEN}}
+        BRANCH: gh-pages
+        FOLDER: build
+        BUILD_SCRIPT: npm i & npm run build
