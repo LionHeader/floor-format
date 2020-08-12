@@ -20,5 +20,5 @@ jobs:
       env:
         ACCESS_TOKEN: ${{secrets.ACCESS_ADMIN_TOKEN}}
         BRANCH: gh-pages
-        FOLDER: build
+        FOLDER: dist
         BUILD_SCRIPT: npm i & npm run build
