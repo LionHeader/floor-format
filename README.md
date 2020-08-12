@@ -34,6 +34,10 @@
   formatFloor(2.2810, 2, 'round) // 2.28
   formatFloor(2.2850, 2, 'round) // 2.29
   formatFloor(2.2950, 2, 'round) // 2.3
+
+  formatFloor(0.1050, 2, 'ceil', {
+    unit: '￥'
+  }) // 0.11￥
 ```
 
 # Updated
