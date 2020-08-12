@@ -10,7 +10,7 @@ on:
 jobs:
   deploy-to-github:
     name: deploy-to-github
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout codes from origin/develop branch
       uses: actions/checkout@master
