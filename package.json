@@ -1,6 +1,6 @@
 {
   "name": "floor-format",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Format the floating-point number to the specified number of digits, and truncate the extra 0 at the end of the floating-point number.",
   "main": "./dist/floor-format.min.js",
   "scripts": {

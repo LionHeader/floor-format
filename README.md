@@ -13,12 +13,15 @@
 ```
   import floorFormat from 'floor-format'
   // or
+  <script src="node_modules/floor-format/dist/floor-format.min.js"></script>
+
   let floorFormat = require('floor-format')
 
   let { floorTrim, formatFloor } = floorFormat
 
   floorTrim(1.20) // 1.2
   floorTrim(1.0, 'MB', ' ') // 1 MB
+  floorTrim(6.610, 'Kb', '-') // 6.61-Kb
 
   formatFloor(2.0810, 2) // 2.09
   
